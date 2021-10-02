@@ -16,14 +16,14 @@ $activity = new aktivitas($connection);
 $data = json_decode(file_get_contents("php://input"));
 
 $activity->nama = $data->nama;
-$activity->status = $data->status;
+$activity->riwayat = $data->riwayat;
 
     if(empty($data->nama)){
         echo '{';
             echo '"message": "aktivitas belum dimasuukan"';
         echo '}';
         return;
-    }elseif(empty($data->status)){
+    }elseif(empty($data->riwayat)){
         echo '{';
             echo '"message": "status belum dimasuukan"';
         echo '}';
