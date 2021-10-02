@@ -10,7 +10,7 @@ Class aktivitas{
     //kolom tabel
     public $id,
            $nama,
-           $status;
+           $riwayat;
     
     public function __construct($connection){
         $this->connection = $connection;
@@ -18,17 +18,17 @@ Class aktivitas{
 
     //membuat aktivitas baru
     public function create(){
-        $query = "INSERT INTO $this->tabname (nama, status) VALUES (?, ?)";
+        $query = "INSERT INTO $this->tabname (nama, riwayat) VALUES (?, ?)";
 
         $statm = $this->connection->prepare($query);
 
-        $statm->execute([$this->nama, $this->status]);
+        $statm->execute([$this->nama, $this->riwayat]);
 
         return true;
     }
     //read
     public function read(){
-        $query = "SELECT id, nama, status FROM $this->tabname";
+        $query = "SELECT id, nama, riwayat FROM $this->tabname";
 
         $statm = $this->connection->prepare($query);
 
@@ -37,13 +37,13 @@ Class aktivitas{
         return $statm;
 
     }
-    //mengubah status 
+    //mengubah riwayat 
     public function update(){
-        $query = "UPDATE $this->tabname SET nama = ?, status = ? WHERE id = ?";
+        $query = "UPDATE $this->tabname SET nama = ?, riwayat = ? WHERE id = ?";
 
         $statm = $this->connection->prepare($query);
 
-        $statm->execute([$this->nama, $this->status, $this->id]);
+        $statm->execute([$this->nama, $this->riwayat, $this->id]);
 
         return true;
     }
