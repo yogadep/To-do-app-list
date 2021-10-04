@@ -11,25 +11,25 @@ include_once '../models/modsaktivitas.php';
 $dbclass = new DBClass();
 $connection = $dbclass->getConnection();
 
-$activity = new aktivitas($connection);
+$keseharian = new aktivitas($connection);
 
 $data = json_decode(file_get_contents("php://input"));
 
-$activity->nama = $data->nama;
-$activity->riwayat = $data->riwayat;
+$keseharian->nama = $data->nama;
+$keseharian->riwayat = $data->riwayat;
 
     if(empty($data->nama)){
         echo '{';
-            echo '"message": "aktivitas belum dimasuukan"';
+            echo '"Message": "Nama aktivitas belum dimasuukan"';
         echo '}';
         return;
     }elseif(empty($data->riwayat)){
         echo '{';
-            echo '"message": "status belum dimasuukan"';
+            echo '"Message": "Nama status belum dimasuukan"';
         echo '}';
         return;
     }
-    if($activity->create()){
+    if($keseharian->create()){
         echo '{';
             echo '"message": "Aktivitas berhasil dimasuukan"';
         echo '}';
