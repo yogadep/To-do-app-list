@@ -17,11 +17,11 @@ $keseharian->id = $_GET['idKeseharian'];
 
 if ($keseharian->delete()) {
     echo '{';
-        echo '"message": "Berhasil menghapus data"';
+        echo '"Message": "Berhasil menghapus data"';
     echo '}';
 }
 else {
     echo '{';
-        echo '"message": "Gagal menghapus data"';
+        echo '"Message": "Gagal menghapus data"';
     echo '}';
 }
