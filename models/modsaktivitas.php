@@ -53,7 +53,7 @@ Class aktivitas{
 
         $statm = $this->connection->prepare($query);
 
-        $statm->execute();
+        $statm->execute([$this->id]);
 
         return true;
     }
