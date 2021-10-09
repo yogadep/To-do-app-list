@@ -17,15 +17,15 @@ $data = json_decode(file_get_contents("php://input"));
 
 $keseharian->id = $_GET["idKeseharian"];
 $keseharian->nama = $data->nama;
-$keseharian->riwayat = $data->riwayat;
+$keseharian->isComplete = $data->isComplete;
 
 if($keseharian->update()){
     echo '{';
-        echo '"Message": Berhasil mengubah aktivitas';
+        echo '"Message": "Berhasil mengubah aktivitas"';
     echo '}';   
 }else {
     echo '{';
-        echo '"Message": Gagal mengubah aktivitas';
+        echo '"Message": "Gagal mengubah aktivitas"';
     echo '}';   
 }
 ?>

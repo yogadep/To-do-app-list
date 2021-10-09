@@ -28,7 +28,7 @@ if($count > 0){
         $p  = array(
               "id" => $id,
               "nama" => $nama,    
-              "riwayat" => $riwayat
+              "isComplete" => $isComplete
         );
 
         array_push($keseharian["body"], $p);

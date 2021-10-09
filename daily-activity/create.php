@@ -16,20 +16,19 @@ $keseharian = new aktivitas($connection);
 $data = json_decode(file_get_contents("php://input"));
 
 $keseharian->nama = $data->nama;
-$keseharian->riwayat = $data->riwayat;
+// $keseharian->riwayat = $data->riwayat;
 
     if(empty($data->nama)){
         echo '{';
             echo '"Message": "Nama aktivitas belum dimasuukan"';
         echo '}';
         return;
-    }elseif(empty($data->riwayat)){
-        echo '{';
-            echo '"Message": "Nama status belum dimasuukan"';
-        echo '}';
-        return;
-    }
-    if($keseharian->create()){
+    // }elseif(empty($data->riwayat)){
+    //     echo '{';
+    //         echo '"Message": "Nama status belum dimasuukan"';
+    //     echo '}';
+    //     return;
+    }if($keseharian->create()){
         echo '{';
             echo '"message": "Aktivitas berhasil dimasuukan"';
         echo '}';
